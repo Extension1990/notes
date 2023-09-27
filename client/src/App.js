@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <main style={{minHeight: '93vh'}}>
+      <main style={{minHeight: '90vh'}}>
         
       </main>
       <Footer />
