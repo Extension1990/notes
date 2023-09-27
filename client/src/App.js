@@ -1,9 +1,15 @@
 import './App.css';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
     <div className="App">
-      Hello World
+      <Header />
+      <main style={{minHeight: '93vh'}}>
+        
+      </main>
+      <Footer />
     </div>
   );
 }
