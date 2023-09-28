@@ -4,12 +4,17 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <Navbar expand="lg" className="bg-white">
+    <Navbar expand="lg" className="bg-white fixed">
       <Container>
-        <Navbar.Brand href="#"><b>Notes Manager</b></Navbar.Brand>
+        <Navbar.Brand href="#">
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <b>Notes Manager</b>
+          </Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="m-auto">
@@ -27,9 +32,17 @@ const Header = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">My Notes</Nav.Link>
+            <Nav.Link href="#action1">
+              <Link to="/my-notes" style={{ textDecoration: 'none' }}>
+                My Notes
+              </Link>
+            </Nav.Link>
             <NavDropdown title="John Bower" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">My Profile</NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/profile" style={{ textDecoration: 'none' }}>
+                  My Profile
+                </Link>
+              </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">
                 Logout
@@ -42,4 +55,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

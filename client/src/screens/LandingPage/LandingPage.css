@@ -1,10 +1,11 @@
 .main {
     min-height: 90vh;
+    padding-top: 250px;
     position: relative;
     bottom: 0;
     display: flex;
     justify-content: center;
-    background-image: url("../../background1.jpg");
+    /* background-image: url("../../background1.jpg"); */
     background-position: center;
     background-size: cover;
 }
@@ -20,4 +21,21 @@
 .intro-text {
     text-align: center;
     width: 100%;
+}
+
+.buttonContainer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.landingButton {
+    width: 200px;
+    height: 55px;
+}
+
+@media screen and (max-width: 992px) {
+    .main {
+        padding-top: 10px;
+    }
 }
