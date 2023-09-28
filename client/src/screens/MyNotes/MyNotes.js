@@ -34,7 +34,6 @@ const MyNotes = () => {
             <Accordion.Header>
                   <span
                     style={{
-                      color: "white",
                       textDecoration: "none",
                       flex: 1,
                       cursor: "pointer",
@@ -58,7 +57,11 @@ const MyNotes = () => {
                       fontSize: 18
                     }}
                   >
-                    { note.title }
+                  <h4>
+                    <Badge variant="success">
+                      Category - { note.category }
+                    </Badge>
+                  </h4>
                   </span>
                   <div>
                     <Button variant='primary' href={`/note/${note._id}`}>Edit</Button>
@@ -66,11 +69,6 @@ const MyNotes = () => {
                   </div>
                 </Card.Header>
                 <Card.Body>
-                  <h4>
-                    <Badge variant="success">
-                      Category - { note.category }
-                    </Badge>
-                  </h4>
                   <blockquote className="blockquote mb-0">
                     <p>
                       { note.content }
