@@ -1,16 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const notes = require('../data/notes');
+const { protect } = require("../middlewares/authMiddleware");
+const {
+    getNoteById,
+    getNotes,
+    CreateNote, 
+    DeleteNote, 
+    UpdateNote, 
+} = require("../controllers/noteController");
 
-// Get all notes
-router.get('/', (req, res) => {
-    res.send(notes);
-});
-
-// Get note by id
-router.get('/:id', (req, res) => {
-    const note = notes.find((n) => n._id === req.params.id);
-    res.send(note);
-});
+router.route("/").get(protect, getNotes);
+router
+  .route("/:id")
+  .get(getNoteById)
+  .delete(protect, DeleteNote)
+  .put(protect, UpdateNote);
+router.route("/create").post(protect, CreateNote);
 
 module.exports = router;
